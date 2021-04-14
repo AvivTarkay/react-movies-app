@@ -1,0 +1,83 @@
+.movies {
+	background-color: rgba(20, 18, 34, 0.541);
+	position: relative;
+	width: 270px;
+	border-radius: 3px;
+	box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1);
+	margin: 0.1rem 0.1rem 0 0.1rem;
+	overflow: hidden;
+}
+.movies > img {
+	object-fit: cover;
+	height: 407px;
+	width: 100%;
+	/* min-width: 240px; */
+}
+.movie-info {
+	background-color: rgba(24, 24, 29, 0.349);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: -0.3rem 0 0 0;
+	padding: 1.5rem;
+	height: 15vh;
+	color: #fff;
+}
+.movie-info h3 {
+	display: inline-block;
+}
+.movie_review {
+	background-color: rgba(255, 255, 255, 0.705);
+	position: absolute;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	left: 0;
+	bottom: 0;
+	font-weight: bolder;
+	right: 0;
+	padding: 1rem;
+	overflow: auto;
+	max-height: 100%;
+	transform: translateY(100%);
+	transition: transform 0.3s ease-in-out;
+}
+.movies:hover .movie_review {
+	transform: translateY(0);
+}
+.tag {
+	background-color: lightslategray;
+	padding: 0.5rem;
+	border-radius: 3px;
+	font-weight: bold;
+}
+.tag.Green {
+	color: green;
+}
+.tag.Orange {
+	color: rgb(255, 145, 0);
+}
+.tag.Red {
+	color: red;
+}
+
+@media (max-width: 600px) {
+	.movies {
+		width: 90%;
+	}
+	.movies img {
+		max-width: 100%;
+		height: 500px;
+	}
+	.movie_review .youtube {
+		position: relative;
+		width: 100px;
+		height: 100px;
+		left: 35%;
+	}
+}
+.youtube {
+	position: relative;
+	width: 120px;
+	height: 90px;
+	left: 50px;
+}

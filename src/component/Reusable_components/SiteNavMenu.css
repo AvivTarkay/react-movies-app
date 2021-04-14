@@ -1,0 +1,26 @@
+.SiteNavMenu {
+	padding-left: 80px;
+}
+@media (max-width: 860px) {
+	.SiteNavMenu {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 1px;
+		min-height: 100vh;
+		background: rgba(0, 0, 0, 0.8);
+		padding: 20px 50px;
+		width: 100%;
+		height: 100vh;
+		max-width: 340px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		transition: all 800ms ease-in-out;
+		z-index: 1;
+	}
+}
+.SiteNavMenu:hidden {
+	/* left: -600px; */
+	/* opacity: 0; */
+}

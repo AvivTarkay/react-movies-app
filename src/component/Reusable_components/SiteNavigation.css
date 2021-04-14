@@ -1,0 +1,36 @@
+nav {
+	width: 100%;
+	min-height: 80px;
+	padding: 20px 0;
+	background: #21222978;
+}
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+#burgerMenu {
+	color: #fff;
+	cursor: pointer;
+	display: none;
+}
+@media (max-width: 860px) {
+	#burgerMenu {
+		display: block;
+		position: absolute;
+		right: 40px;
+	}
+	.wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+}
+
+@media (max-width: 1365px) {
+	.wrapper {
+		max-width: 90%;
+	}
+}

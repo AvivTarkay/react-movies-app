@@ -1,0 +1,29 @@
+.loader {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.loader > img {
+	width: 50%;
+	height: auto;
+}
+/* .loader::before {
+	position: absolute;
+}
+.loader::after {
+	position: absolute;
+	display: block;
+	content: "";
+	animation: spinner 1.8s ease-in-out infinite;
+	height: 10px;
+	border-radius: 5px;
+}
+.loader::before {
+	top: -20px;
+	left: 10px;
+	width: 40px;
+	background: #ef4836;
+
+	@keyframes spinner;
+} */
