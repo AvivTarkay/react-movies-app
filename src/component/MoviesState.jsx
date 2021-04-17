@@ -26,41 +26,39 @@ export const MoviesState = ({ children }) => {
 	const [trailersKey, setTrailersKey] = useState([]);
 	const [seriesTrailer, setSeriesTrailer] = useState([]);
 
-	const getKeys = async (responseArray, trailerBegin, trailerEnd) => {
-		const trailers = [];
-		responseArray.forEach(async movie => {
-			const res = await (
-				await fetch(`${trailerBegin}${movie.id}${trailerEnd}`)
-			).json();
-			trailers.push(res.results[0]);
-		});
-
-		return trailers;
-	};
-
+	// const getKeys = async (responseArray, trailerBegin, trailerEnd) => {
+	// 	// const trailers = [];
+	// 	responseArray.forEach(async (movie, i) => {
+	// 		const res = await (
+	// 			await fetch(`${trailerBegin}${movie.id}${trailerEnd}`)
+	// 		).json();
+	// 		setPopularMovies(movie => (movie[i].trailer = res.results));
+	// 		// trailers.push(res.results[0]);
+	// 	});
+	// 	console.log("getKeys => movie.trailer", popularMovies);
+	// 	// return trailers;
+	// };
 	useEffect(() => {
 		const getPopularMovies = async () => {
 			const popularMoviesRes = await (
 				await fetch(`${popularMovies_Api}${currentPage}`)
 			).json();
-
-			if (searchMovie.trim() === "") {
-				setPopularMovies(popularMoviesRes.results);
-				setShowPagination(true);
-			}
 			//* custom trailer url
 			const trailerBegin = "https://api.themoviedb.org/3/movie/";
 			const trailerEnd = `/videos?api_key=${api_key}&language=en-US`;
 			//*
-
 			//*getting trailers for movies
-			const trailerKeysArray = await getKeys(
-				popularMoviesRes.results,
-				trailerBegin,
-				trailerEnd
-			);
-			setTrailersKey(trailerKeysArray);
+			popularMoviesRes.results.forEach(async movie => {
+				const res = await (
+					await fetch(`${trailerBegin}${movie.id}${trailerEnd}`)
+				).json();
+				movie.trailer = res.results;
+			});
 			//*
+			if (searchMovie.trim() === "") {
+				setPopularMovies(popularMoviesRes.results);
+				setShowPagination(true);
+			}
 		};
 		getPopularMovies();
 	}, [searchMovie, currentPage]);
@@ -71,24 +69,22 @@ export const MoviesState = ({ children }) => {
 				await fetch(`${popularTv_Api}${currentPage}`)
 			).json();
 
-			if (searchTvShow.trim() === "") {
-				setPopularTvShow(popularTvShowRes.results);
-				setShowPagination(true);
-			}
-
 			//* custom trailer url
 			const trailerBegin = "https://api.themoviedb.org/3/tv/";
 			const trailerEnd = `/season/1/videos?api_key=${api_key}&language=en-US`;
 			//*
-
-			//* getting trailers for tvShows
-			const trailerKeysArray = await getKeys(
-				popularTvShowRes.results,
-				trailerBegin,
-				trailerEnd
-			);
-			setSeriesTrailer(trailerKeysArray);
+			//*getting trailers for tvShows
+			popularTvShowRes.results.forEach(async tvShow => {
+				const res = await (
+					await fetch(`${trailerBegin}${tvShow.id}${trailerEnd}`)
+				).json();
+				tvShow.trailer = res.results;
+			});
 			//*
+			if (searchTvShow.trim() === "") {
+				setPopularTvShow(popularTvShowRes.results);
+				setShowPagination(true);
+			}
 		};
 		getPopularTvShows();
 	}, [searchTvShow, currentPage]);

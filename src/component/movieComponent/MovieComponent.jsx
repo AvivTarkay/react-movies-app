@@ -18,9 +18,10 @@ export default function MovieComp(props) {
 		title,
 		vote_average,
 		name,
+		trailer,
 		// first_air_date,
 	} = props;
-	console.log("MovieComp => trailers", props.trailer);
+	console.log(trailer);
 	return (
 		<div className="movies">
 			<img
@@ -34,7 +35,7 @@ export default function MovieComp(props) {
 			</div>
 			<div className="movie_review">
 				<a
-					href={`https://www.youtube.com/watch?v=${props?.trailer?.key}`}
+					href={`https://www.youtube.com/watch?v=${trailer[0]?.key}`}
 					target="_blank"
 					rel="noreferrer"
 				>

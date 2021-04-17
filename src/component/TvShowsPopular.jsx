@@ -17,15 +17,11 @@ export default function TvPopular() {
 				)}
 				{!pageLoading ? (
 					popularTvShow.length > 0 &&
-					popularTvShow.map((tvShow, i) => {
-						return (
-							<MovieComp
-								key={tvShow.id}
-								{...tvShow}
-								trailer={seriesTrailer[i]}
-							/>
-						);
-					})
+					React.Children.toArray(
+						popularTvShow.map(tvShow => {
+							return <MovieComp {...tvShow} />;
+						})
+					)
 				) : (
 					<Loader />
 				)}

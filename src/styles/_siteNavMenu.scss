@@ -1,8 +1,8 @@
 .hiddenSiteNavMenu {
-	padding-left: 80px;
 	height: 10vh;
 	display: flex;
 	flex-wrap: wrap;
+	gap: 15px;
 }
 @media (max-width: 860px) {
 	.SiteNavMenu {
@@ -19,18 +19,27 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 		gap: 10px;
 		transition: all 800ms ease-in-out;
 		z-index: 1;
 	}
-}
-@media (max-width: 600px) {
 	.hiddenSiteNavMenu {
-		width: 70%;
+		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: 5px;
+		flex-wrap: wrap;
+	}
+}
+@media (max-width: 660px) {
+	.hiddenSiteNavMenu {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		// padding-right: 70px;
 		flex-wrap: wrap;
 	}
 }

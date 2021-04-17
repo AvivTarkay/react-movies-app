@@ -14,11 +14,11 @@ export default function Popular() {
 			)}
 			{!pageLoading ? (
 				popularMovies.length > 0 &&
-				popularMovies.map((movie, i) => {
-					return (
-						<MovieComp key={movie.id} {...movie} trailer={trailersKey[i]} />
-					);
-				})
+				React.Children.toArray(
+					popularMovies.map(movie => {
+						return <MovieComp {...movie} />;
+					})
+				)
 			) : (
 				<Loader />
 			)}
