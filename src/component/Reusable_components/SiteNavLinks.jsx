@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { movieContext } from "../MoviesState";
-import "./SiteNavLinks.css";
 
 const SiteNavLinks = ({ btnText }) => {
 	const { setHiddenMenu, activeLink, setActiveLink } = useContext(movieContext);

@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import { movieContext } from "../MoviesState";
-import Container from "./Container";
 import SiteNavMenu from "./SiteNavMenu";
 import SearchNav from "../movieComponent/SearchNav";
-import "./SiteNavigation.css";
 
 const SiteNavigation = () => {
 	const { hiddenMenu, setHiddenMenu } = useContext(movieContext);

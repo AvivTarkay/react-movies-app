@@ -1,14 +1,11 @@
 import React, { useContext } from "react";
 import { movieContext } from "../MoviesState";
-import "./SearchNav.css";
+// import "./SearchNav.css";
 
 export default function SearchNav() {
-	const {
-		searchMovie,
-		searchTvShow,
-		HandleOnSubmit,
-		HandlerOnChange,
-	} = useContext(movieContext);
+	const { searchTvShow, HandleOnSubmit, HandlerOnChange } = useContext(
+		movieContext
+	);
 	return (
 		<form onSubmit={HandleOnSubmit} className="formSubmit">
 			<input

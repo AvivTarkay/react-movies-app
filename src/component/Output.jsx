@@ -4,7 +4,6 @@ import Container from "../component/Reusable_components/Container";
 import PopularMovies from "./PopularMovies";
 import TvShowsPopular from "./TvShowsPopular";
 import Pagination from "./movieComponent/Pagination";
-import "./Output.css";
 
 export default function Output() {
 	const { activeLink } = useContext(movieContext);

@@ -1,0 +1,26 @@
+.formSubmit {
+	height: 40px;
+	min-height: 40px;
+
+	.searchNav {
+		outline: none;
+		border-radius: 50px;
+		border: 1px solid #fbfcff;
+		background: transparent;
+		padding: 10px 16px;
+		width: 250px;
+		color: #fff;
+		margin-right: 24px;
+		&:placeholder-shown {
+			color: rgb(253, 234, 234);
+			font-size: 18px;
+			font-weight: bold;
+			letter-spacing: 4px;
+		}
+	}
+}
+@media (min-width: 860px) {
+	input {
+		width: 220px;
+	}
+}

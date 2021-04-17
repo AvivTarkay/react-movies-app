@@ -3,7 +3,6 @@ import { movieContext } from "./MoviesState";
 import Container from "./Reusable_components/Container";
 import MovieComp from "./movieComponent/MovieComponent";
 import Loader from "./Reusable_components/Loader";
-import "./popularMovies.css";
 
 export default function Popular() {
 	const { popularMovies, trailersKey, pageLoading } = useContext(movieContext);

@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
-import FixedContainer from "../Reusable_components/Container";
 import { movieContext } from "../MoviesState";
-import "./Pagination.css";
+// import "./Pagination.css";
+import Container from "../Reusable_components/Container";
 
 const MoviePagination = () => {
 	const { newPage, currentPage, showPagination } = useContext(movieContext);
 	return (
 		<div className="moviePagination">
 			{showPagination && (
-				<FixedContainer>
+				<Container>
 					<button
 						className="directionBtn"
 						style={{
@@ -20,7 +20,7 @@ const MoviePagination = () => {
 						Prev Page
 					</button>
 					<button onClick={() => newPage("next")}>Next Page</button>
-				</FixedContainer>
+				</Container>
 			)}
 		</div>
 	);

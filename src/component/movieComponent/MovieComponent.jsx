@@ -1,7 +1,5 @@
 import React from "react";
-// import { faYoutube } from "@fortawesome/free-brands-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./MovieComponent.css";
+// import "./MovieComponent.css";
 
 const Images_Api = "https://images.tmdb.org/t/p/w1280";
 
@@ -35,15 +33,14 @@ export default function MovieComp(props) {
 				<span className={`tag ${voteAvg(vote_average)}`}>{vote_average}</span>
 			</div>
 			<div className="movie_review">
-				<span>
-					<a
-						href={`https://www.youtube.com/watch?v=${props?.trailer?.key}`}
-						target="_blank"
-						rel="noreferrer"
-					>
-						<img src="./youtube.png" alt="Youtube" className="youtube" />
-					</a>
-				</span>
+				<a
+					href={`https://www.youtube.com/watch?v=${props?.trailer?.key}`}
+					target="_blank"
+					rel="noreferrer"
+				>
+					<img src="./youtube.png" alt="Youtube" className="youtube" />
+				</a>
+
 				<p>{overview}</p>
 			</div>
 		</div>

@@ -1,0 +1,23 @@
+.moviePagination {
+	width: 100%;
+	.Container:nth-child(1) {
+		height: 80px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	button {
+		border: none;
+		outline: none;
+		background: #024edd;
+		color: #fff;
+		font-size: 20px;
+		border-radius: 4px;
+		width: 190px;
+		padding: 10px 0;
+		cursor: pointer;
+		user-select: none;
+		margin: 0 200px 20px 200px;
+		transition: background 500ms ease-in-out;
+	}
+}
