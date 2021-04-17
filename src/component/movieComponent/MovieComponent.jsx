@@ -1,5 +1,5 @@
 import React from "react";
-// import "./MovieComponent.css";
+import youtube from "../../images/youtube.png";
 
 const Images_Api = "https://images.tmdb.org/t/p/w1280";
 
@@ -39,7 +39,7 @@ export default function MovieComp(props) {
 					target="_blank"
 					rel="noreferrer"
 				>
-					<img src="./youtube.png" alt="Youtube" className="youtube" />
+					<img src={youtube} alt="Youtube" className="youtube" />
 				</a>
 
 				<p>{overview}</p>
