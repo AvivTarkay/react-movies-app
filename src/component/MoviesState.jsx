@@ -1,6 +1,5 @@
 import React, { useState, createContext, useEffect } from "react";
-
-const api_key = "1241f3581f3481e4a98c83e83079d1e8";
+const api_key = process.env.REACT_APP_API_KEY;
 const popularMovies_Api = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}&page=`;
 const SearchMovie_Api = `https://api.themoviedb.org/3/search/movie?&api_key=${api_key}&query=`;
 const SearchTVs_Api = `https://api.themoviedb.org/3/search/tv?api_key=${api_key}&&query=`;
