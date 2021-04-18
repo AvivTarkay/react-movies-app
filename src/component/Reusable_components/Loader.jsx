@@ -1,8 +1,8 @@
-import loading_12 from "../../images/loading_12.gif";
+import loadingGif from "../../images/loadingGif.gif";
 const Loader = () => {
 	return (
 		<div className="loader">
-			<img src={loading_12} alt="Loading" />
+			<img src={loadingGif} alt="Loading" />
 		</div>
 	);
 };
