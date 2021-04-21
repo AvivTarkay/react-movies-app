@@ -6,7 +6,7 @@ import Loader from "./Reusable_components/Loader";
 
 export default function Popular() {
 	const { popularMovies, trailersKey, pageLoading } = useContext(movieContext);
-
+	console.log(popularMovies);
 	return (
 		<Container>
 			{popularMovies.length === 0 && (

@@ -34,14 +34,19 @@ export default function MovieComp(props) {
 				<span className={`tag ${voteAvg(vote_average)}`}>{vote_average}</span>
 			</div>
 			<div className="movie_review">
-				<a
-					href={`https://www.youtube.com/watch?v=${trailer[0]?.key}`}
-					target="_blank"
-					rel="noreferrer"
-				>
-					<img src={youtube} alt="Youtube" className="youtube" />
-				</a>
-
+				{trailer[0]?.key && (
+					<a
+						href={`https://www.youtube.com/watch?v=${trailer.map(trailer => {
+							if (trailer.key) {
+								return trailer.key;
+							}
+						})}`}
+						target="_blank"
+						rel="noreferrer"
+					>
+						<img src={youtube} alt="Youtube" className="youtube" />
+					</a>
+				)}
 				<p>{overview}</p>
 			</div>
 		</div>
